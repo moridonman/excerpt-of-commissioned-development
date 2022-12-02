@@ -1,8 +1,8 @@
 <template>
-  <div id="engineers">
+  <div id="workers">
     <input type="checkbox" id="item" value="001">
     <label for="item">稼働中のみ表示</label>
-    <table class="table engineer-table table-striped">
+    <table class="table worker-table table-striped">
       <thead class="thead-light">
         <tr class="fix_header">
           <th> ID ↕︎</th>
@@ -11,10 +11,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="engineer in engineers" :key="engineer.id">
-          <td>{{ engineer.id }}</td>
-          <td>{{ engineer.name }}</td>
-          <td>{{ engineer.first_agency.name }}</td>
+        <tr v-for="worker in workers" :key="worker.id">
+          <td>{{ worker.id }}</td>
+          <td>{{ worker.name }}</td>
+          <td>{{ worker.first_agency.name }}</td>
           <td></td>
         </tr>
       </tbody>
@@ -26,16 +26,16 @@
 export default {
   data: function () {
     return {
-      engineers: []
+      workers: []
     }
   },
   async mounted() {
-    fetch('http://localhost:3002/api/engineers')
+    fetch('http://localhost:3002/api/workers')
       .then(response => {
         return response.json()
       })
       .then(data => {
-        this.engineers = JSON.parse(data.engineers)
+        this.workers = JSON.parse(data.workers)
       })
       .then(error => {
         console.log(error)
@@ -49,7 +49,7 @@ export default {
     font-size: 2em;
     text-align: center;
   }
-  .engineer-table {
+  .worker-table {
     overflow-x: scroll; /* 横スクロール処理 */
     overflow-y: scroll; /* 横スクロール処理 */
     white-space:nowrap;/* 自動改行させない */
