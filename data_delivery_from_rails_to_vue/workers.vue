@@ -6,7 +6,7 @@
       <thead class="thead-light">
         <tr class="fix_header">
           <th> ID ↕︎</th>
-          <th>エンジニア名 ↕︎</th>
+          <th>名前 ↕︎</th>
           <th>1次代理店 ↕︎</th>
         </tr>
       </thead>
